@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import conta.model.Conta;
 import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 import conta.util.Cores;
 
 public class menu {
@@ -30,6 +31,9 @@ public class menu {
 			System.out.println("\n\n" + c2.getSaldo());
 		//fizemos um deposito
 		c1.depositar(10000.0f);
+		
+		ContaPoupanca c4 = new ContaPoupanca(4, 123, 2, "Lia", 20000.0f, 5);
+        c4.visualizar();
 		
 		int opcao;
 		
