@@ -3,6 +3,7 @@ package conta;
 import java.util.Scanner;
 
 import conta.model.Conta;
+import conta.model.ContaCorrente;
 import conta.util.Cores;
 
 public class menu {
@@ -10,7 +11,7 @@ public class menu {
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
         //criamos uma conta
-		Conta c1 = new Conta(1, 123, 1, "Gabriel de Souza", 30000.f );
+		ContaCorrente c1 = (ContaCorrente) new Conta(1, 123, 1, "Gabriel de Souza", 30000.f );
 		
 	  
 		c1.visualizar();
@@ -21,7 +22,7 @@ public class menu {
 		
 		System.out.println("\n\n" + c1.getSaldo());
 		//criamos uma conta 2
-		Conta c2 = new Conta(2, 123, 1, "Dener Cardoso", 50000.0f);
+		ContaCorrente c2 = (ContaCorrente) new Conta(2, 123, 1, "Dener Cardoso", 50000.0f);
 		
 		c2.visualizar();
 		//fizemos um saque
