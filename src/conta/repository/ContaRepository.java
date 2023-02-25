@@ -5,7 +5,7 @@ import conta.model.Conta;
 public interface ContaRepository {
 	
 	public void procurarPorNumero(int numero);
-    public void listasTodas();
+    public void listarTodas();
     public void cadastrar(Conta conta);
     public void atualizar(Conta conta);
     public void deletar(int numero);
@@ -14,8 +14,5 @@ public interface ContaRepository {
     public void sacar(int numero, float valor);
     public void depositar(int numero, float valor);
     public void transferir(int numero, int numerodestino, float valor);
-
-Conversar em CodandoAlone
-
 
 }
