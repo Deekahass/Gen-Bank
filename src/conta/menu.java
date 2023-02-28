@@ -1,17 +1,23 @@
 package conta;
 
-import java.io.IOException;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 import conta.controller.ContaController;
+import conta.model.Conta;
 import conta.model.ContaCorrente;
 import conta.model.ContaPoupanca;
 import conta.util.Cores;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.Locale;
+import java.util.Scanner;
+
+
+
 public class menu {
 
 	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
 		Scanner leia = new Scanner(System.in);
 
 		ContaController contas = new ContaController();
@@ -175,14 +181,25 @@ public class menu {
 			case 6:
 				System.out.println("6- Sacar");
 				System.out.println("Número da Conta: ");
+				numero = leia.nextInt();
+				
 				System.out.println("Valor do Saque: ");
+				valor = leia.nextFloat();
+				
+				contas.sacar(numero, valor);
 
 				keyPress();
 				break;
 			case 7:
 				System.out.println("7- Depositar");
 				System.out.println("Número da Conta: ");
+				numero = leia.nextInt();
+				
 				System.out.println("Valor do depósito: ");
+				valor = leia.nextFloat();
+				
+				contas.depositar(numero, valor);
+				
 				keyPress();
 				break;
 			case 8:
@@ -196,6 +213,8 @@ public class menu {
 
 				System.out.println("Valor da Transferência: ");
 				valor = leia.nextFloat();
+				
+				contas.transferir(numero, numeroDestino, valor);
 
 				keyPress();
 				break;
